@@ -11,3 +11,30 @@ Visit the ["Express.js/JavaScript Code Sample: Authorization For Basic APIs"](ht
 ## Why Use Auth0?
 
 Auth0 is a flexible drop-in solution to add authentication and authorization services to your applications. Your team and organization can avoid the cost, time, and risk that come with building your own solution to authenticate and authorize users. We offer tons of guidance and SDKs for you to get started and [integrate Auth0 into your stack easily](https://auth0.com/developers/hub/code-samples/full-stack).
+
+## Setup
+
+    touch .env
+
+    ##Enter (with your own values) in .env
+
+    PORT=6060
+    CLIENT_ORIGIN_URL=http://localhost:4040
+    AUTH0_AUDIENCE=https://hello-world.example.com
+    AUTH0_DOMAIN=YOUR_DOMAIN.us.auth0.com
+
+## Usage
+
+    npm run dev
+
+
+    curl --request GET \
+      --url http:/localhost:6060/api/messages/protected \
+      --header 'authorization: Bearer TOKEN_GOES_HERE'
+
+      //=>
+        {
+          "text": "This is a protected message."
+        }
+
+
